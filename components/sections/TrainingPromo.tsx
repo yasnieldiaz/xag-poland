@@ -55,10 +55,10 @@ export function TrainingPromo() {
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/training/repl.webp"
+                  src="/images/training/certificate.svg"
                   alt={t("title")}
                   fill
-                  className="object-cover"
+                  className="object-contain bg-gradient-to-br from-gray-50 to-gray-100"
                   unoptimized
                 />
               </div>
