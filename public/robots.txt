@@ -1,0 +1,15 @@
+# XAG IMEGA Poland - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://agro.esix.online/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Allow search engines to crawl all languages
+Allow: /pl/
+Allow: /en/
+Allow: /es/
