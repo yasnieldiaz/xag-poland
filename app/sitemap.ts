@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const siteUrl = "https://agro.esix.online";
+const siteUrl = "https://droneagri.pl";
 
 const locales = ["es", "en", "pl"];
 

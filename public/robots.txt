@@ -1,15 +1,37 @@
-# XAG IMEGA Poland - robots.txt
+# DroneAgri.pl - XAG IMEGA Polska
+# https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://agro.esix.online/sitemap.xml
+# Sitemaps
+Sitemap: https://droneagri.pl/sitemap.xml
 
-# Disallow admin areas
+# Disallow admin and private areas
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
 
-# Allow search engines to crawl all languages
+# Allow all language versions
 Allow: /pl/
 Allow: /en/
 Allow: /es/
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex specific
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2

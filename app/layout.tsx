@@ -20,42 +20,55 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://agro.esix.online";
+const siteUrl = "https://droneagri.pl";
 
 export const viewport: Viewport = {
   themeColor: "#0b0e20",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Drony Rolnicze XAG | XAG IMEGA Polska - Precyzyjne Rolnictwo 4.0",
-    template: "%s | XAG IMEGA Polska",
+    default: "Drony Rolnicze XAG Polska | DroneAgri.pl - Precyzyjne Rolnictwo 4.0",
+    template: "%s | DroneAgri.pl - XAG IMEGA Polska",
   },
   description:
-    "XAG IMEGA Polska - oficjalny dystrybutor dronów rolniczych XAG. Opryski dronem, precyzyjne nawożenie, mapowanie pól. P150 Max, P100 Pro, R150. Szkolenia i serwis.",
+    "DroneAgri.pl - oficjalny dystrybutor dronów rolniczych XAG w Polsce. Profesjonalne opryski dronem, nawożenie, siew i mapowanie pól. P150 Max, P100 Pro, R150, R100, R200. Certyfikowane szkolenia operatorów i autoryzowany serwis.",
   keywords: [
     "drony rolnicze",
-    "XAG IMEGA",
+    "drony rolnicze XAG",
     "opryski dronem",
+    "dron do oprysków",
     "precyzyjne rolnictwo",
     "rolnictwo 4.0",
-    "drony do oprysków",
-    "P150 Max",
-    "P100 Pro",
-    "R150",
-    "dron rolniczy Polska",
+    "smart farming Polska",
+    "XAG P150 Max",
+    "XAG P100 Pro",
+    "XAG R150",
+    "XAG R100",
+    "XAG R200",
+    "robot polowy XAG",
+    "dron rolniczy cena",
+    "opryskiwacz dronowy",
     "nawożenie dronem",
-    "mapowanie pól",
+    "siew dronem",
+    "mapowanie pól dronem",
     "XAG Polska",
+    "XAG IMEGA",
     "IMEGA Group",
     "drony agricolas",
     "agricultural drones Poland",
+    "drone spraying",
+    "precision agriculture",
+    "autopilot rolniczy APC2",
+    "szkolenie operator drona rolniczego",
+    "serwis dronów rolniczych",
   ],
   authors: [{ name: "XAG IMEGA Polska", url: siteUrl }],
-  creator: "XAG IMEGA Polska",
+  creator: "DroneAgri.pl - XAG IMEGA Polska",
   publisher: "IMEGA Sp. z o.o.",
   formatDetection: {
     email: true,
@@ -67,32 +80,37 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     alternateLocale: ["es_ES", "en_US"],
     url: siteUrl,
-    siteName: "XAG IMEGA Polska",
-    title: "Drony Rolnicze XAG | XAG IMEGA Polska",
+    siteName: "DroneAgri.pl - XAG IMEGA Polska",
+    title: "Drony Rolnicze XAG Polska | DroneAgri.pl",
     description:
-      "Oficjalny dystrybutor dronów rolniczych XAG w Polsce. Precyzyjne opryski, nawożenie i mapowanie pól. Szkolenia i serwis gwarancyjny.",
+      "Oficjalny dystrybutor dronów rolniczych XAG w Polsce. Profesjonalne opryski, nawożenie, siew i mapowanie pól. Certyfikowane szkolenia i autoryzowany serwis gwarancyjny.",
     images: [
       {
-        url: "/images/hero/hero-p150-max.webp",
-        width: 1920,
-        height: 1080,
-        alt: "Dron rolniczy XAG P150 Max w akcji",
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "DroneAgri.pl - Drony Rolnicze XAG P150 Max w akcji nad polem uprawnym",
+        type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Drony Rolnicze XAG | XAG IMEGA Polska",
+    site: "@droneagri_pl",
+    creator: "@xag_imega",
+    title: "Drony Rolnicze XAG Polska | DroneAgri.pl",
     description:
-      "Oficjalny dystrybutor dronów rolniczych XAG w Polsce. Precyzyjne opryski, nawożenie i mapowanie pól.",
-    images: ["/images/hero/hero-p150-max.webp"],
+      "Oficjalny dystrybutor dronów rolniczych XAG w Polsce. Profesjonalne opryski, nawożenie i mapowanie pól dronem.",
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
@@ -101,15 +119,37 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
     languages: {
-      "pl-PL": `${siteUrl}/pl`,
+      "pl-PL": siteUrl,
       "es-ES": `${siteUrl}/es`,
       "en-US": `${siteUrl}/en`,
     },
   },
   verification: {
-    google: "verification_token",
+    google: "google-site-verification-code",
+    yandex: "yandex-verification-code",
   },
   category: "technology",
+  classification: "Agricultural Technology",
+  referrer: "origin-when-cross-origin",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#df1b23" },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  other: {
+    "msapplication-TileColor": "#0b0e20",
+    "msapplication-config": "/browserconfig.xml",
+  },
 };
 
 export default function RootLayout({

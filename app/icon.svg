@@ -1,4 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#0b0e20"/>
-  <text x="16" y="24" font-family="Arial Black, Arial, sans-serif" font-size="20" font-weight="900" fill="#df1b23" text-anchor="middle">X</text>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b0e20"/>
+      <stop offset="100%" style="stop-color:#1a1f3a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
+  <!-- Drone body -->
+  <ellipse cx="16" cy="16" rx="4" ry="2.5" fill="#df1b23"/>
+  <!-- Drone arms -->
+  <line x1="12" y1="16" x2="6" y2="10" stroke="#df1b23" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="20" y1="16" x2="26" y2="10" stroke="#df1b23" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="16" x2="6" y2="22" stroke="#df1b23" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="20" y1="16" x2="26" y2="22" stroke="#df1b23" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Propellers -->
+  <circle cx="6" cy="10" r="3" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <circle cx="26" cy="10" r="3" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <circle cx="6" cy="22" r="3" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <circle cx="26" cy="22" r="3" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <!-- Propeller centers -->
+  <circle cx="6" cy="10" r="1" fill="#df1b23"/>
+  <circle cx="26" cy="10" r="1" fill="#df1b23"/>
+  <circle cx="6" cy="22" r="1" fill="#df1b23"/>
+  <circle cx="26" cy="22" r="1" fill="#df1b23"/>
 </svg>
