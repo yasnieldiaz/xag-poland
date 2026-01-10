@@ -1577,201 +1577,173 @@
     }
   },
   "r200": {
-    "badge": "Robot Agrícola Autónomo",
+    "badge": "Rover Agrícola",
     "title": "XAG R200",
-    "tagline": "Desempeño que Transforma",
-    "description": "Robot agrícola autónomo de alta capacidad con versatilidad multi-tarea para fumigación, esparcimiento e inspección a gran escala.",
+    "tagline": "Co-Piloto Inteligente",
+    "description": "Plataforma de fumigación de precisión de seis ruedas para huertos e invernaderos, con operación remota intuitiva y expansibilidad modular para diversas aplicaciones agrícolas modernas.",
     "orderNow": "Pedir Ahora",
     "viewSpecs": "Ver Especificaciones",
     "downloads": "Descargas",
     "features": {
       "badge": "Características Clave",
       "title": "Por qué Elegir R200",
-      "description": "Robot agrícola autónomo de alta capacidad diseñado para operaciones versátiles a escala",
-      "highCapacity": {
-        "title": "Alta Capacidad",
-        "description": "Tanque de 200L y carga de 300kg para operaciones a gran escala"
+      "description": "Rover autónomo de alta capacidad con estabilidad de seis ruedas para operaciones exigentes en huertos e invernaderos",
+      "precision": {
+        "title": "Fumigación de Alto Volumen",
+        "description": "Tanque de 240L con caudal de 16 L/min para operaciones prolongadas"
       },
-      "multiTask": {
-        "title": "Versatilidad Multi-Tarea",
-        "description": "Fumigación, esparcimiento e inspección en una sola plataforma"
+      "navigation": {
+        "title": "Navegación Inteligente",
+        "description": "Múltiples modos de operación autónoma con seguimiento de ruta en tiempo real"
       },
-      "autonomous": {
-        "title": "Operación Autónoma",
-        "description": "Navegación RTK a nivel centimétrico para agricultura de precisión"
-      },
-      "allTerrain": {
-        "title": "Todo Terreno",
-        "description": "Chasis robusto con capacidad de pendiente del 45%"
+      "sixWheel": {
+        "title": "Estabilidad de Seis Ruedas",
+        "description": "Tracción superior y manejo de terreno con motor independiente"
       },
       "electric": {
         "title": "Propulsión Eléctrica",
-        "description": "Operación limpia y silenciosa con bajo mantenimiento"
+        "description": "Operación económica y de bajas emisiones"
+      },
+      "remote": {
+        "title": "Control Remoto",
+        "description": "Elimina la exposición del operador a químicos"
       },
       "modular": {
-        "title": "Sistema Modular",
-        "description": "Accesorios intercambiables para diversas tareas agrícolas"
+        "title": "Plataforma Modular",
+        "description": "Expandible con accesorios adicionales"
       }
     },
     "specs": {
       "badge": "Rendimiento",
       "title": "Especificaciones Principales",
-      "description": "Construido para operaciones terrestres de alta capacidad en agricultura a gran escala",
+      "description": "Construido para operaciones terrestres de precisión de alta capacidad en huertos e invernaderos",
       "vehicleWidth": "Ancho del Vehículo",
-      "vehicleWidthValue": "1.3 m",
+      "vehicleWidthValue": "80 cm",
       "curbWeight": "Peso en Vacío",
-      "curbWeightValue": "450 kg",
+      "curbWeightValue": "130 kg",
       "maxSpeed": "Velocidad Máxima",
-      "maxSpeedValue": "3 m/s",
+      "maxSpeedValue": "1.5 m/s",
       "gradeability": "Pendiente Máxima",
-      "gradeabilityValue": "45%",
+      "gradeabilityValue": "20%",
       "groundClearance": "Despeje del Suelo",
-      "groundClearanceValue": "300 mm"
+      "groundClearanceValue": "270 mm"
     },
     "chassis": {
       "badge": "Chasis y Tren Motriz",
-      "title": "Plataforma Industrial",
-      "description": "Chasis de acero reforzado con tracción en las cuatro ruedas para rendimiento superior en terrenos difíciles",
+      "title": "Plataforma de Seis Ruedas",
+      "description": "Construcción completamente en aluminio con tracción independiente de seis ruedas para manejo superior del terreno y recuperación de tracción",
       "features": {
-        "steel": "Chasis de acero reforzado de alta resistencia",
-        "suspension": "Suspensión independiente en las cuatro ruedas",
-        "fourWheel": "Sistema de tracción total (4WD)",
-        "vcu": "Sistema avanzado de control de vehículo"
+        "aluminum": "Chasis de aluminio fundido",
+        "suspension": "Diseño de eje portal suspendido",
+        "sixWheel": "Tracción independiente de seis ruedas",
+        "torque": "Redistribución inteligente del torque"
       }
     },
     "revospray": {
       "badge": "Sistema de Fumigación",
-      "title": "Sistema RevoSpray R200",
-      "description": "Sistema de fumigación de ultra alta capacidad con boquillas múltiples para cobertura máxima en cultivos extensivos.",
+      "title": "Sistema RevoSpray",
+      "description": "Sistema de fumigación de alta capacidad con cuatro bombas y cuatro atomizadores centrífugos que producen gotas ultrafinas para cobertura completa del dosel.",
       "tankCapacity": "Capacidad del Tanque",
-      "tankCapacityValue": "200 L",
+      "tankCapacityValue": "240 L",
       "flowRate": "Caudal Máximo",
       "flowRateValue": "16 L/min",
-      "sprayWidth": "Ancho de Fumigación",
-      "sprayWidthValue": "12 m",
       "dropletSize": "Tamaño de Gota",
-      "dropletSizeValue": "50-300 μm",
+      "dropletSizeValue": "60-200 μm",
+      "sprayRange": "Alcance de Fumigación",
+      "sprayRangeValue": "7 m/lado",
       "features": {
-        "tank": "Tanque de alta capacidad de 200L para operaciones extendidas",
-        "nozzles": "Sistema de boquillas múltiples para cobertura uniforme",
-        "sensor": "Sensor de nivel inteligente con calibración automática",
-        "pump": "Bomba de diafragma de alta presión",
-        "control": "Control de flujo variable en tiempo real"
-      }
-    },
-    "revocast": {
-      "badge": "Sistema de Esparcimiento",
-      "title": "Sistema RevoCast R200",
-      "description": "Sistema de esparcimiento de alta capacidad para fertilizantes granulares y semillas con distribución precisa.",
-      "hopperCapacity": "Capacidad de Tolva",
-      "hopperCapacityValue": "300 kg",
-      "spreadWidth": "Ancho de Esparcimiento",
-      "spreadWidthValue": "18 m",
-      "spreadRate": "Tasa de Esparcimiento",
-      "spreadRateValue": "100 kg/min",
-      "features": {
-        "hopper": "Tolva de 300kg para operaciones de larga duración",
-        "discs": "Discos esparcidores duales de alta velocidad",
-        "rate": "Control de tasa variable GPS",
-        "compatible": "Compatible con semillas, fertilizantes y enmiendas"
+        "pumps": "Cuatro bombas de impulsor flexible (300+ horas de vida útil)",
+        "atomizers": "Cuatro atomizadores centrífugos para gotas ultrafinas",
+        "jetsprayer": "JetSprayer con ventiladores conducidos de alta eficiencia",
+        "brackets": "Soportes de montaje ajustables para fumigación multiángulo",
+        "airGuide": "Cubiertas guía de aire para ángulos de fumigación ampliados"
       }
     },
     "control": {
       "badge": "Sistema de Control",
-      "title": "Control Remoto ARC 5",
-      "description": "Control remoto de grado profesional con pantalla táctil de alta resolución y telemetría completa en tiempo real.",
-      "display": "Pantalla 10\"",
-      "displayValue": "1500 nits de brillo",
-      "range": "Alcance de Control",
-      "rangeValue": "2 km",
+      "title": "Control Remoto SRC 5",
+      "description": "Control remoto de grado profesional con pantalla de alto brillo y cámara FPV integrada para monitoreo completo de operaciones.",
+      "display": "Pantalla 7\"",
+      "displayValue": "1200 nits de brillo",
+      "fov": "Campo de Visión",
+      "fovValue": "150° horizontal",
       "battery": "Duración de Batería",
-      "batteryValue": "10 horas",
+      "batteryValue": "8 horas",
       "connectivity": "Conectividad",
-      "connectivityValue": "5G/LTE + XLink"
+      "connectivityValue": "XLink HD"
     },
     "navigation": {
       "badge": "Navegación Inteligente",
-      "title": "Sistema SuperX 6 Pro",
-      "description": "Sistema de navegación de última generación con IA integrada para agricultura autónoma de precisión.",
+      "title": "Sistema de Control SuperX 5 Ultra",
+      "description": "Sistema de control inteligente avanzado con múltiples modos de operación para agricultura autónoma versátil.",
       "modes": {
-        "autonomous": {
-          "title": "Modo Autónomo Completo",
-          "description": "Operación 100% autónoma con planificación inteligente de rutas"
+        "cruise": {
+          "title": "Modo Crucero",
+          "description": "Mantiene velocidad de 0.1-1.5 m/s con fumigación consistente"
         },
-        "follow": {
-          "title": "Modo Seguimiento",
-          "description": "Sigue automáticamente al operador o vehículo líder"
-        },
-        "swarm": {
-          "title": "Operación en Enjambre",
-          "description": "Coordina múltiples R200 para cobertura máxima"
-        },
-        "mapping": {
-          "title": "Mapeo 3D",
-          "description": "Crea mapas de terreno detallados para optimización de rutas"
+        "pathTracking": {
+          "title": "Seguimiento de Ruta",
+          "description": "Algoritmos de visión detectan desviaciones y auto-corrigen en tiempo real"
         },
         "variableRate": {
-          "title": "Aplicación Variable",
-          "description": "Ajuste automático basado en mapas de prescripción"
+          "title": "Fumigación de Tasa Variable",
+          "description": "El volumen se adapta automáticamente a la velocidad de movimiento"
         },
-        "nightMode": {
-          "title": "Operación Nocturna",
-          "description": "Sensores LiDAR para operación 24/7"
+        "repeat": {
+          "title": "Modo Repetición",
+          "description": "Graba recorridos manuales para repeticiones autónomas"
+        },
+        "planning": {
+          "title": "Planificación de Ruta",
+          "description": "Mapeo por imágenes satelitales para operación sin manos"
+        },
+        "realTerra": {
+          "title": "Mapeo RealTerra",
+          "description": "Generación de vista aérea para mapeo a bordo"
         }
       }
     },
-    "positioning": {
-      "badge": "Posicionamiento de Precisión",
-      "title": "Precisión RTK Dual",
-      "description": "Sistema de posicionamiento dual con antenas RTK redundantes para máxima precisión y confiabilidad.",
-      "features": {
-        "dualRtk": "Antenas RTK duales redundantes",
-        "cloudRtk": "Conectividad RTK en la nube",
-        "cmLevel": "Precisión ±2cm garantizada"
-      }
-    },
     "safety": {
-      "badge": "Seguridad Avanzada",
-      "title": "Sistema de Seguridad 360°",
-      "description": "Múltiples sensores y sistemas de seguridad para operación confiable en cualquier entorno.",
+      "badge": "Características de Seguridad",
+      "title": "Asistencia de Seguridad IA",
+      "description": "Sistemas de seguridad avanzados para operación confiable en entornos complejos.",
       "features": {
-        "lidar": "LiDAR 360° para detección de obstáculos",
-        "cameras": "Cámaras de visión múltiple con IA",
-        "emergency": "Parada de emergencia remota",
-        "geofence": "Sistema de geocercas integrado"
+        "pedestrian": "Detección de peatones (alerta a 4m, parada a 2m)",
+        "adaptive": "Control de velocidad adaptativo con monitoreo IMU",
+        "posture": "Ajuste de postura en tiempo real en pendientes"
       }
     },
     "power": {
       "badge": "Sistema de Energía",
-      "title": "Batería Industrial B282100",
-      "description": "Sistema de batería de ultra alta capacidad para operación extendida durante todo el día.",
+      "title": "Batería Inteligente B141050",
+      "description": "Sistema de batería inteligente de ultra alta capacidad para operación extendida.",
       "capacity": "Capacidad",
-      "capacityValue": "2100 Wh",
+      "capacityValue": "1050 Wh",
       "cycles": "Ciclos de Vida",
-      "cyclesValue": "2000 ciclos",
+      "cyclesValue": "1500 ciclos",
       "runtime": "Autonomía",
-      "runtimeValue": "Hasta 4 horas",
+      "runtimeValue": "Hasta 15 min",
       "charger": {
-        "title": "Estación de Carga SC8000",
-        "power": "8 kW de potencia",
-        "time": "~45 min (20-100%)"
+        "title": "Cargador CM13600S",
+        "power": "3.4 kW de potencia",
+        "time": "~12 min (30-95%)"
       }
     },
     "applications": {
       "badge": "Aplicaciones",
-      "title": "Versatilidad en Gran Escala",
-      "description": "Diseñado para agricultura extensiva y operaciones comerciales de gran envergadura",
+      "title": "Cobertura Versátil de Cultivos",
+      "description": "Diseñado para fumigación de alta capacidad en huertos e invernaderos",
       "crops": {
-        "grains": "Cereales",
-        "cotton": "Algodón",
-        "soybeans": "Soja",
-        "sugarcane": "Caña de Azúcar"
+        "lemons": "Limones",
+        "dragonFruit": "Pitahaya",
+        "avocados": "Aguacates",
+        "grapes": "Uvas"
       }
     },
     "contact": {
       "badge": "Contacto",
-      "title": "¿Listo para Escalar tus Operaciones?",
-      "description": "Contacta con nuestro equipo para saber más sobre el R200 y cómo puede transformar tus operaciones agrícolas a gran escala.",
+      "title": "¿Listo para Transformar tus Operaciones en Huertos?",
+      "description": "Contacta con nuestro equipo para saber más sobre el R200 y cómo puede revolucionar tus operaciones agrícolas.",
       "callUs": "Llámanos",
       "emailUs": "Escríbenos",
       "form": {
