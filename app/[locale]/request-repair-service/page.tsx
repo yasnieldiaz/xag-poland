@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function RequestRepairServicePage() {
+  const t = useTranslations("repairService");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,7 +20,7 @@ export default function RequestRepairServicePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Repair request submitted:", formData);
-    alert("Thank you for your repair request. Our team will contact you within 24 hours.");
+    alert(t("successMessage"));
   };
 
   const handleChange = (
@@ -34,14 +35,13 @@ export default function RequestRepairServicePage() {
       <section className="bg-navy py-24">
         <div className="container-main">
           <span className="inline-block px-4 py-1 bg-brand-red rounded-full text-white text-sm font-medium mb-4">
-            Support
+            {t("badge")}
           </span>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Request Repair Service
+            {t("title")}
           </h1>
           <p className="text-xl text-white/80 max-w-2xl">
-            Submit a repair request and our technical team will get back to you
-            within 24 hours.
+            {t("description")}
           </p>
         </div>
       </section>
@@ -52,13 +52,13 @@ export default function RequestRepairServicePage() {
           <div className="bg-gray-50 rounded-2xl p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <h2 className="text-2xl font-bold text-navy mb-6">
-                Repair Request Form
+                {t("formTitle")}
               </h2>
 
               {/* Contact Information */}
               <div className="space-y-6">
                 <h3 className="text-lg font-semibold text-navy">
-                  Contact Information
+                  {t("contactInfo")}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -66,7 +66,7 @@ export default function RequestRepairServicePage() {
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Full Name *
+                      {t("fullName")} *
                     </label>
                     <input
                       type="text"
@@ -75,7 +75,7 @@ export default function RequestRepairServicePage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      className="w-full h-[50px] px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white"
                     />
                   </div>
                   <div>
@@ -83,7 +83,7 @@ export default function RequestRepairServicePage() {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Email Address *
+                      {t("emailAddress")} *
                     </label>
                     <input
                       type="email"
@@ -92,7 +92,7 @@ export default function RequestRepairServicePage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      className="w-full h-[50px] px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white"
                     />
                   </div>
                   <div>
@@ -100,7 +100,7 @@ export default function RequestRepairServicePage() {
                       htmlFor="phone"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Phone Number *
+                      {t("phoneNumber")} *
                     </label>
                     <input
                       type="tel"
@@ -109,7 +109,7 @@ export default function RequestRepairServicePage() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      className="w-full h-[50px] px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white"
                     />
                   </div>
                   <div>
@@ -117,7 +117,7 @@ export default function RequestRepairServicePage() {
                       htmlFor="company"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Company/Farm Name
+                      {t("companyName")}
                     </label>
                     <input
                       type="text"
@@ -125,7 +125,7 @@ export default function RequestRepairServicePage() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      className="w-full h-[50px] px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white"
                     />
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function RequestRepairServicePage() {
               {/* Product Information */}
               <div className="space-y-6 pt-6 border-t">
                 <h3 className="text-lg font-semibold text-navy">
-                  Product Information
+                  {t("productInfo")}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -142,7 +142,7 @@ export default function RequestRepairServicePage() {
                       htmlFor="productModel"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Product Model *
+                      {t("productModel")} *
                     </label>
                     <select
                       id="productModel"
@@ -150,16 +150,15 @@ export default function RequestRepairServicePage() {
                       required
                       value={formData.productModel}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      className="w-full h-[50px] px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white"
                     >
-                      <option value="">Select a product</option>
+                      <option value="">{t("selectProduct")}</option>
                       <option value="p150-max">XAG P150 Max</option>
-                      <option value="p150">XAG P150</option>
                       <option value="p100-pro">XAG P100 Pro</option>
-                      <option value="p100">XAG P100</option>
-                      <option value="r150">XAG R150</option>
-                      <option value="ifbot-x3">IFBOT X3</option>
-                      <option value="mower-t90">Mower T-90</option>
+                      <option value="r150">XAG R150 2022</option>
+                      <option value="r100">XAG R100</option>
+                      <option value="r200">XAG R200</option>
+                      <option value="apc2">XAG APC2</option>
                     </select>
                   </div>
                   <div>
@@ -167,7 +166,7 @@ export default function RequestRepairServicePage() {
                       htmlFor="serialNumber"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Serial Number *
+                      {t("serialNumber")} *
                     </label>
                     <input
                       type="text"
@@ -176,7 +175,7 @@ export default function RequestRepairServicePage() {
                       required
                       value={formData.serialNumber}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      className="w-full h-[50px] px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white"
                     />
                   </div>
                   <div>
@@ -184,7 +183,7 @@ export default function RequestRepairServicePage() {
                       htmlFor="purchaseDate"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Purchase Date
+                      {t("purchaseDate")}
                     </label>
                     <input
                       type="date"
@@ -192,7 +191,7 @@ export default function RequestRepairServicePage() {
                       name="purchaseDate"
                       value={formData.purchaseDate}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      className="w-full h-[50px] px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white"
                     />
                   </div>
                   <div>
@@ -200,18 +199,18 @@ export default function RequestRepairServicePage() {
                       htmlFor="priority"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Priority Level
+                      {t("priorityLevel")}
                     </label>
                     <select
                       id="priority"
                       name="priority"
                       value={formData.priority}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      className="w-full h-[50px] px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white"
                     >
-                      <option value="standard">Standard</option>
-                      <option value="priority">Priority (XAG Care Plus)</option>
-                      <option value="express">Express (XAG Care Premium)</option>
+                      <option value="standard">{t("priorityStandard")}</option>
+                      <option value="priority">{t("priorityPlus")}</option>
+                      <option value="express">{t("priorityPremium")}</option>
                     </select>
                   </div>
                 </div>
@@ -220,14 +219,14 @@ export default function RequestRepairServicePage() {
               {/* Issue Description */}
               <div className="space-y-6 pt-6 border-t">
                 <h3 className="text-lg font-semibold text-navy">
-                  Issue Description
+                  {t("issueSection")}
                 </h3>
                 <div>
                   <label
                     htmlFor="issueDescription"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Please describe the issue *
+                    {t("issueLabel")} *
                   </label>
                   <textarea
                     id="issueDescription"
@@ -237,7 +236,7 @@ export default function RequestRepairServicePage() {
                     value={formData.issueDescription}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent resize-none"
-                    placeholder="Describe the problem you're experiencing, when it started, and any error messages..."
+                    placeholder={t("issuePlaceholder")}
                   />
                 </div>
               </div>
@@ -246,7 +245,7 @@ export default function RequestRepairServicePage() {
                 type="submit"
                 className="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold hover:bg-brand-red-hover transition-colors"
               >
-                Submit Repair Request
+                {t("submitButton")}
               </button>
             </form>
           </div>
