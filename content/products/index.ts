@@ -37,7 +37,7 @@ export const products: Record<string, Product> = {
       { title: "4D Imaging Radar", description: "Advanced obstacle detection and avoidance" },
       { title: "Smart Route Planning", description: "AI-powered autonomous flight planning" },
     ],
-    image: "/images/products/p150-max/hero.webp",
+    image: "/images/products/p150-max/card.webp",
     gallery: ["/images/products/p150-max/gallery-1.webp"],
   },
   "p100-pro": {
@@ -57,7 +57,7 @@ export const products: Record<string, Product> = {
       { title: "4D Imaging Radar", description: "Comprehensive obstacle detection" },
       { title: "Precision Spraying", description: "AI-optimized spray patterns" },
     ],
-    image: "/images/products/p100-pro/hero.webp",
+    image: "/images/products/p100-pro/card.webp",
     gallery: [],
   },
   "r150-2022": {
@@ -77,7 +77,7 @@ export const products: Record<string, Product> = {
       { title: "Autonomous Navigation", description: "GPS-guided precision movement" },
       { title: "Low Compaction", description: "Lightweight design protects soil health" },
     ],
-    image: "/images/products/r150/hero.webp",
+    image: "/images/products/r150-2022/card.webp",
     gallery: [],
   },
   "r100": {
@@ -100,7 +100,7 @@ export const products: Record<string, Product> = {
       { title: "Compact Design", description: "Access narrow, rough terrain with ease" },
       { title: "Remote Control", description: "Eliminates operator exposure to chemicals" },
     ],
-    image: "/images/products/r100/hero.webp",
+    image: "/images/products/r100/card.webp",
     gallery: [],
   },
   "r200": {
@@ -123,7 +123,7 @@ export const products: Record<string, Product> = {
       { title: "Autonomous Operation", description: "Centimeter-level RTK navigation for precision farming" },
       { title: "All-Terrain", description: "Robust chassis with 45% grade capability" },
     ],
-    image: "/images/products/r200/hero.webp",
+    image: "/images/products/r200/card.webp",
     gallery: [],
   },
   "apc2": {
