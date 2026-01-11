@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 const downloadItems = [
   {
@@ -99,17 +98,71 @@ export default function DownloadCenterPage() {
                 </a>
               </div>
             </div>
-            <div className="relative">
-              <div className="relative mx-auto w-64 md:w-80">
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-red/20 to-green-500/20 rounded-3xl blur-3xl"></div>
-                <div className="relative bg-white rounded-3xl p-4 shadow-2xl">
-                  <Image
-                    src="/images/logo-xag-imega.svg"
-                    alt="XAG One App"
-                    width={300}
-                    height={400}
-                    className="w-full"
-                  />
+            <div className="relative hidden md:block">
+              <div className="relative mx-auto w-72">
+                {/* Phone Mockup */}
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-red/30 to-green-500/30 rounded-[3rem] blur-3xl scale-110"></div>
+                <div className="relative bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl border-4 border-gray-800">
+                  {/* Phone Screen */}
+                  <div className="bg-gradient-to-br from-navy to-navy-light rounded-[2rem] overflow-hidden aspect-[9/16]">
+                    {/* Status Bar */}
+                    <div className="flex justify-between items-center px-6 py-3 text-white/60 text-xs">
+                      <span>9:41</span>
+                      <div className="flex gap-1">
+                        <div className="w-4 h-2 bg-white/60 rounded-sm"></div>
+                        <div className="w-4 h-2 bg-white/60 rounded-sm"></div>
+                      </div>
+                    </div>
+                    {/* App Content */}
+                    <div className="px-4 py-6">
+                      <div className="text-center mb-6">
+                        <div className="w-16 h-16 bg-brand-red rounded-2xl mx-auto mb-3 flex items-center justify-center">
+                          <span className="text-white font-bold text-xl">XAG</span>
+                        </div>
+                        <h3 className="text-white font-bold text-lg">XAG One</h3>
+                        <p className="text-white/60 text-xs">v3.2.1</p>
+                      </div>
+                      {/* Feature Cards */}
+                      <div className="space-y-3">
+                        <div className="bg-white/10 rounded-xl p-3 flex items-center gap-3">
+                          <div className="w-10 h-10 bg-brand-red/20 rounded-lg flex items-center justify-center">
+                            <svg className="w-5 h-5 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="text-white text-sm font-medium">Flight Planning</p>
+                            <p className="text-white/50 text-xs">AI-powered routes</p>
+                          </div>
+                        </div>
+                        <div className="bg-white/10 rounded-xl p-3 flex items-center gap-3">
+                          <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
+                            <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="text-white text-sm font-medium">Analytics</p>
+                            <p className="text-white/50 text-xs">Real-time data</p>
+                          </div>
+                        </div>
+                        <div className="bg-white/10 rounded-xl p-3 flex items-center gap-3">
+                          <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                            <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="text-white text-sm font-medium">Fleet Tracking</p>
+                            <p className="text-white/50 text-xs">GPS monitoring</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Home Indicator */}
+                  <div className="w-32 h-1 bg-white/30 rounded-full mx-auto mt-2"></div>
                 </div>
               </div>
             </div>
