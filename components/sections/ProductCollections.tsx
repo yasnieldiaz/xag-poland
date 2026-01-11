@@ -29,7 +29,7 @@ const collections: Collection[] = [
     descriptionKey: "landborneDesc",
     image: "/images/products/r150/hero.webp",
     href: "/landborne",
-    products: ["R150"],
+    products: ["R150", "R200", "R100"],
   },
   {
     id: "autopilot",
@@ -71,8 +71,23 @@ const featuredProducts: FeaturedProduct[] = [
     id: "r150",
     name: "XAG R150 2022",
     tagline: "Ground Sprayer",
-    image: "/images/products/r150/card.webp",
+    image: "/images/products/r150-2022/product.png",
     href: "/products/r150-2022",
+  },
+  {
+    id: "r200",
+    name: "XAG R200",
+    tagline: "200L Tank | Ground Robot",
+    image: "/images/products/r200/gallery-1.jpg",
+    href: "/products/r200",
+    badgeKey: "new",
+  },
+  {
+    id: "r100",
+    name: "XAG R100",
+    tagline: "100L Tank | Ground Robot",
+    image: "/images/products/r100/gallery-1.jpg",
+    href: "/products/r100",
   },
   {
     id: "apc2",
