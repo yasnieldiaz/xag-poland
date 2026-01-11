@@ -158,9 +158,6 @@ export function MegaNav({ isScrolled }: MegaNavProps) {
               className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
             >
               <div className="bg-white rounded-xl shadow-xl p-4 min-w-[220px]">
-                <Link href="/videos-tutorials" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-navy hover:text-brand-red transition-colors">
-                  {t("videosTutorials")}
-                </Link>
                 <Link href="/download-center" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-navy hover:text-brand-red transition-colors">
                   {t("downloadCenter")}
                 </Link>

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { ScrollReveal } from "@/components/animations";
 
-const resourceKeys = ["videos", "downloads"] as const;
+const resourceKeys = ["downloads"] as const;
 
 export function ResourcesSection() {
   const t = useTranslations("resources");
@@ -26,11 +26,11 @@ export function ResourcesSection() {
         </ScrollReveal>
 
         {/* Resource Cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid gap-6 max-w-xl mx-auto">
           {resourceKeys.map((key, index) => (
             <ScrollReveal key={key} delay={index * 0.1}>
               <Link
-                href={t(`items.${key}.href`) as "/videos-tutorials" | "/download-center"}
+                href={t(`items.${key}.href`) as "/download-center"}
                 className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
               >
                 <div className="relative aspect-[16/10] bg-gray-200">

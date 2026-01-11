@@ -31,7 +31,6 @@ const menuItems: MenuItem[] = [
   {
     titleKey: "resources",
     items: [
-      { nameKey: "videosTutorials", href: "/videos-tutorials" },
       { nameKey: "downloadCenter", href: "/download-center" },
     ],
   },

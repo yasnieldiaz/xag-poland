@@ -30,7 +30,6 @@ export function Footer() {
     resources: {
       title: t("resources"),
       links: [
-        { name: tNav("videosTutorials"), href: "/videos-tutorials" },
         { name: tNav("downloadCenter"), href: "/download-center" },
       ],
     },
