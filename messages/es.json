@@ -270,7 +270,31 @@
     "manual": "Manual",
     "guide": "Guía",
     "download": "Descargar",
+    "app": {
+      "badge": "Aplicación Móvil",
+      "title": "XAG One App",
+      "description": "Plataforma completa de gestión agrícola para planificar, ejecutar y analizar tus operaciones con drones agrícolas.",
+      "feature1": "Planificación de vuelo con IA",
+      "feature2": "Monitoreo de operaciones en tiempo real",
+      "feature3": "Análisis e informes detallados",
+      "feature4": "Gestión de flotas multi-dron",
+      "downloadOn": "Descargar en",
+      "getItOn": "Obtener en"
+    },
+    "docs": {
+      "badge": "Documentación",
+      "title": "Manuales y Especificaciones",
+      "description": "Descarga manuales de usuario, guías técnicas y especificaciones de productos."
+    },
     "downloads": {
+      "p150maxManual": {
+        "title": "Manual de Usuario P150 Max",
+        "description": "Manual completo del dron agrícola XAG P150 Max 2024.",
+        "type": "Manual",
+        "fileSize": "32 MB",
+        "format": "PDF",
+        "product": "P150 Max"
+      },
       "p100proSpecs": {
         "title": "Especificaciones Técnicas P100 Pro",
         "description": "Especificaciones completas y características del dron P100 Pro.",
