@@ -122,6 +122,7 @@
     "messagePlaceholder": "Cuéntanos cómo podemos ayudarte...",
     "sendMessage": "Enviar mensaje",
     "successMessage": "Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.",
+    "errorMessage": "Ha ocurrido un error al enviar tu mensaje. Por favor, inténtalo de nuevo.",
     "salesSpecialist": "Especialista en Ventas",
     "ceo": "CEO",
     "addressValue": "ul. Smolna 14\n44-200 Rybnik\nPolonia"
@@ -1176,7 +1177,7 @@
       "perYear": "/año",
       "basic": {
         "name": "Care Básico",
-        "price": "499€",
+        "price": "650€",
         "features": {
           "priority": "Prioridad de reparación estándar",
           "discount": "10% descuento en piezas",
@@ -1186,7 +1187,7 @@
       },
       "plus": {
         "name": "Care Plus",
-        "price": "999€",
+        "price": "930€",
         "features": {
           "priority": "Servicio de reparación prioritario",
           "discount": "20% descuento en piezas",
@@ -1198,7 +1199,7 @@
       },
       "premium": {
         "name": "Care Premium",
-        "price": "1.999€",
+        "price": "1.860€",
         "features": {
           "priority": "Servicio de reparación express",
           "discount": "30% descuento en piezas",

@@ -122,6 +122,7 @@
     "messagePlaceholder": "Powiedz nam, jak możemy pomóc...",
     "sendMessage": "Wyślij wiadomość",
     "successMessage": "Dziękujemy za wiadomość. Skontaktujemy się z Tobą wkrótce.",
+    "errorMessage": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.",
     "salesSpecialist": "Specjalista ds. Sprzedaży",
     "ceo": "CEO",
     "addressValue": "ul. Smolna 14\n44-200 Rybnik\nPolska"
@@ -228,7 +229,7 @@
       "perYear": "/rok",
       "basic": {
         "name": "Care Podstawowy",
-        "price": "€499",
+        "price": "2 800 zł",
         "features": {
           "priority": "Standardowy priorytet naprawy",
           "discount": "10% zniżki na części",
@@ -238,7 +239,7 @@
       },
       "plus": {
         "name": "Care Plus",
-        "price": "€999",
+        "price": "4 000 zł",
         "features": {
           "priority": "Priorytetowa usługa naprawy",
           "discount": "20% zniżki na części",
@@ -250,7 +251,7 @@
       },
       "premium": {
         "name": "Care Premium",
-        "price": "€1999",
+        "price": "8 000 zł",
         "features": {
           "priority": "Ekspresowa usługa naprawy",
           "discount": "30% zniżki na części",
