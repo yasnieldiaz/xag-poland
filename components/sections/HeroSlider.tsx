@@ -101,7 +101,7 @@ export function HeroSlider() {
                   fill
                   className="object-cover"
                   priority={index === 0}
-                  unoptimized
+                  sizes="100vw"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-navy/30" />

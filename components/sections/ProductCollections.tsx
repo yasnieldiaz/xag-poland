@@ -27,7 +27,7 @@ const collections: Collection[] = [
     id: "landborne",
     titleKey: "landborne",
     descriptionKey: "landborneDesc",
-    image: "/images/products/r150/hero.webp",
+    image: "/images/products/r200/hero.webp",
     href: "/landborne",
     products: ["R150", "R200", "R100"],
   },
@@ -71,7 +71,7 @@ const featuredProducts: FeaturedProduct[] = [
     id: "r150",
     name: "XAG R150 2022",
     tagline: "Ground Sprayer",
-    image: "/images/products/r150-2022/product.png",
+    image: "/images/products/r150-2022/card.webp",
     href: "/products/r150-2022",
   },
   {
@@ -131,7 +131,7 @@ export function ProductCollections() {
                   alt={t(collection.titleKey)}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -190,7 +190,7 @@ export function ProductCollections() {
                     alt={product.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    unoptimized
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   {product.badgeKey && (
                     <span className="absolute top-3 left-3 px-3 py-1.5 bg-brand-red text-white text-sm font-medium rounded-lg">

@@ -138,7 +138,7 @@ function ProductCard({ product }: { product: Product }) {
           alt={product.name}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
-          unoptimized
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         {product.featured && (
           <span className="absolute top-4 left-4 px-3 py-1 bg-brand-red text-white text-xs font-medium rounded-full">
