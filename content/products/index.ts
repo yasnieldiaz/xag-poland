@@ -77,7 +77,7 @@ export const products: Record<string, Product> = {
       { title: "Autonomous Navigation", description: "GPS-guided precision movement" },
       { title: "Low Compaction", description: "Lightweight design protects soil health" },
     ],
-    image: "/images/products/r150-2022/card.webp",
+    image: "/images/products/r150-2022/card-new.webp",
     gallery: [],
   },
   "r100": {

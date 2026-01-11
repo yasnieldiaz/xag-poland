@@ -71,7 +71,7 @@ const featuredProducts: FeaturedProduct[] = [
     id: "r150",
     name: "XAG R150 2022",
     tagline: "Ground Sprayer",
-    image: "/images/products/r150-2022/card.webp",
+    image: "/images/products/r150-2022/card-new.webp",
     href: "/products/r150-2022",
   },
   {

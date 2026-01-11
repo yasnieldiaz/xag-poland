@@ -47,7 +47,7 @@ const products: Product[] = [
     id: "r150",
     name: "R150",
     tagline: "Ground Sprayer",
-    image: "/images/products/r150/card.webp",
+    image: "/images/products/r150/card-new.webp",
     category: "landborne",
     href: "/products/r150-2022",
   },

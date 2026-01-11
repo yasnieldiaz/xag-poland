@@ -40,7 +40,7 @@ const slides: Slide[] = [
     id: "r150",
     titleKey: "XAG R150 2022",
     subtitleKey: "r150Subtitle",
-    image: "/images/products/r150/hero.webp",
+    image: "/images/products/r150/hero-new.webp",
     productHref: "/products/r150-2022",
   },
   {
