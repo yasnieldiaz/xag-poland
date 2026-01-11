@@ -2,7 +2,8 @@
 
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 
@@ -61,17 +62,53 @@ const productNames: Record<string, string> = {
 
 export function MobileNav({ onClose }: MobileNavProps) {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const t = useTranslations("nav");
   const tCommon = useTranslations("common");
 
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-white z-40 lg:hidden"
+  useEffect(() => {
+    setMounted(true);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onClose();
+    }, 200);
+  };
+
+  const menuContent = (
+    <div
+      className="fixed inset-0 lg:hidden"
+      style={{ zIndex: 9999 }}
     >
-      <div className="h-full overflow-y-auto pt-20 pb-8 px-6">
+      {/* Backdrop */}
+      <div
+        className={`absolute inset-0 bg-black/20 ${isClosing ? 'animate-[fadeOut_0.2s_ease-out_forwards]' : 'animate-[fadeIn_0.15s_ease-out]'}`}
+        onClick={handleClose}
+      />
+      {/* Menu Panel */}
+      <div
+        className={`absolute inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl ${isClosing ? 'animate-[slideOutRight_0.2s_ease-out_forwards]' : 'animate-[slideInRight_0.2s_ease-out]'}`}
+      >
+        <div className="h-full overflow-y-auto pt-6 pb-8 px-6">
+        {/* Close Button */}
+        <div className="flex justify-end mb-4">
+          <button
+            onClick={handleClose}
+            className="p-2 text-navy hover:text-brand-red transition-colors"
+            aria-label="Close menu"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
         <nav className="space-y-2">
           {menuItems.map((section) => (
             <div key={section.titleKey} className="border-b border-gray-100">
@@ -106,7 +143,7 @@ export function MobileNav({ onClose }: MobileNavProps) {
                     <Link
                       key={item.nameKey}
                       href={item.href}
-                      onClick={onClose}
+                      onClick={handleClose}
                       className="block py-2 text-gray-600 hover:text-brand-red transition-colors"
                     >
                       {productNames[item.nameKey] || t(item.nameKey)}
@@ -119,13 +156,18 @@ export function MobileNav({ onClose }: MobileNavProps) {
         </nav>
 
         <div className="mt-8">
-          <Button href="/contact-us" variant="primary" className="w-full">
+          <Button href="/contact-us" variant="primary" className="w-full" onClick={handleClose}>
             {tCommon("contactUs")}
           </Button>
         </div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
+
+  if (!mounted) return null;
+
+  return createPortal(menuContent, document.body);
 }
 
 function ChevronIcon({ className }: { className?: string }) {

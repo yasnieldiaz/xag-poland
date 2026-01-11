@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Link, useRouter } from "@/i18n/routing";
 import { Button } from "@/components/ui/Button";
@@ -108,11 +107,9 @@ export function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <MobileNav onClose={() => setIsMobileMenuOpen(false)} />
-        )}
-      </AnimatePresence>
+      {isMobileMenuOpen && (
+        <MobileNav onClose={() => setIsMobileMenuOpen(false)} />
+      )}
     </header>
   );
 }

@@ -504,14 +504,10 @@ function RemoteSection() {
             <p className="text-lg text-gray-600 mb-8">
               {t("description")}
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-3 gap-4">
               <div className="bg-white rounded-xl p-4 shadow-sm">
                 <div className="text-3xl font-bold text-brand-red mb-1">5km</div>
                 <p className="text-sm text-gray-600">{t("controlRange")}</p>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-3xl font-bold text-brand-red mb-1">7&quot;</div>
-                <p className="text-sm text-gray-600">{t("hdDisplay")}</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
                 <div className="text-3xl font-bold text-brand-red mb-1">IP67</div>
