@@ -298,7 +298,7 @@ function ChassisSection() {
           <ClipReveal className="relative">
             <div className="aspect-video rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/products/r100/hero.webp"
+                src="/images/products/r100/gallery-5.png"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -331,7 +331,7 @@ function RevoSpraySection() {
           <ClipReveal className="relative order-2 lg:order-1">
             <div className="aspect-video rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/products/r100/hero.webp"
+                src="/images/products/r100/gallery-4.jpg"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -435,7 +435,7 @@ function ControlSystemSection() {
           <ClipReveal className="relative">
             <div className="aspect-video rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/products/r100/hero.webp"
+                src="/images/products/r100/gallery-6.jpg"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -517,7 +517,7 @@ function SafetySection() {
           <ClipReveal className="relative">
             <div className="aspect-video rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/products/r100/hero.webp"
+                src="/images/products/r100/gallery-1.jpg"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -607,7 +607,7 @@ function PowerSystemSection() {
           <ClipReveal className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-navy-light">
               <Image
-                src="/images/products/r100/hero.webp"
+                src="/images/products/r100/gallery-2.jpg"
                 alt={t("title")}
                 fill
                 className="object-cover"
