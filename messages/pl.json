@@ -121,8 +121,11 @@
     "message": "Wiadomość",
     "messagePlaceholder": "Powiedz nam, jak możemy pomóc...",
     "sendMessage": "Wyślij wiadomość",
-    "successMessage": "Dziękujemy za wiadomość. Skontaktujemy się z Tobą wkrótce.",
-    "errorMessage": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.",
+    "sending": "Wysyłanie...",
+    "successTitle": "Wiadomość wysłana!",
+    "successMessage": "Dziękujemy za kontakt. Nasz zespół odpowie na Twoją wiadomość tak szybko, jak to możliwe.",
+    "errorTitle": "Błąd wysyłania",
+    "errorMessage": "Przepraszamy, wystąpił problem z wysłaniem wiadomości. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.",
     "salesSpecialist": "Specjalista ds. Sprzedaży",
     "ceo": "CEO",
     "addressValue": "ul. Smolna 14\n44-200 Rybnik\nPolska"

@@ -3,7 +3,6 @@ import {
   ProductCollections,
   StatsSection,
   WhyChooseXAG,
-  ResourcesSection,
   TrainingPromo,
   SupportSection,
   CTASection,
@@ -23,9 +22,6 @@ export default function HomePage() {
 
       {/* Why Choose XAG */}
       <WhyChooseXAG />
-
-      {/* Resources - Case Studies, Videos, Blog */}
-      <ResourcesSection />
 
       {/* Training Programs Promotion */}
       <TrainingPromo />

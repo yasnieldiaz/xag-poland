@@ -121,8 +121,11 @@
     "message": "Mensaje",
     "messagePlaceholder": "Cuéntanos cómo podemos ayudarte...",
     "sendMessage": "Enviar mensaje",
-    "successMessage": "Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.",
-    "errorMessage": "Ha ocurrido un error al enviar tu mensaje. Por favor, inténtalo de nuevo.",
+    "sending": "Enviando...",
+    "successTitle": "Mensaje enviado!",
+    "successMessage": "Gracias por contactarnos. Nuestro equipo responderá a tu mensaje lo antes posible.",
+    "errorTitle": "Error al enviar",
+    "errorMessage": "Lo sentimos, hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo o contáctanos directamente.",
     "salesSpecialist": "Especialista en Ventas",
     "ceo": "CEO",
     "addressValue": "ul. Smolna 14\n44-200 Rybnik\nPolonia"

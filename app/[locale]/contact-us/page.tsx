@@ -42,10 +42,12 @@ export default function ContactUsPage() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
       const response = await fetch("/api/contact", {
@@ -57,7 +59,7 @@ export default function ContactUsPage() {
       });
 
       if (response.ok) {
-        alert(t("successMessage"));
+        setSubmitStatus("success");
         setFormData({
           name: "",
           email: "",
@@ -67,10 +69,10 @@ export default function ContactUsPage() {
           message: "",
         });
       } else {
-        alert(t("errorMessage"));
+        setSubmitStatus("error");
       }
     } catch {
-      alert(t("errorMessage"));
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -227,29 +229,33 @@ export default function ContactUsPage() {
                     </div>
                   </div>
 
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      {t("subject")} *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent"
-                    >
-                      <option value="">{t("subjectPlaceholder")}</option>
-                      <option value="product-inquiry">{t("subjectOptions.productInquiry")}</option>
-                      <option value="quote-request">{t("subjectOptions.quoteRequest")}</option>
-                      <option value="training">{t("subjectOptions.training")}</option>
-                      <option value="support">{t("subjectOptions.support")}</option>
-                      <option value="partnership">{t("subjectOptions.partnership")}</option>
-                      <option value="other">{t("subjectOptions.other")}</option>
-                    </select>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="w-full">
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
+                        {t("subject")} *
+                      </label>
+                      <select
+                        id="subject"
+                        name="subject"
+                        required
+                        value={formData.subject}
+                        onChange={handleChange}
+                        style={{ width: '100%' }}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white appearance-none"
+                      >
+                        <option value="">{t("subjectPlaceholder")}</option>
+                        <option value="product-inquiry">{t("subjectOptions.productInquiry")}</option>
+                        <option value="quote-request">{t("subjectOptions.quoteRequest")}</option>
+                        <option value="training">{t("subjectOptions.training")}</option>
+                        <option value="support">{t("subjectOptions.support")}</option>
+                        <option value="partnership">{t("subjectOptions.partnership")}</option>
+                        <option value="other">{t("subjectOptions.other")}</option>
+                      </select>
+                    </div>
+                    <div></div>
                   </div>
 
                   <div>
@@ -271,11 +277,41 @@ export default function ContactUsPage() {
                     />
                   </div>
 
+                  {/* Success/Error Message */}
+                  {submitStatus === "success" && (
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
+                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-green-800">{t("successTitle")}</h4>
+                        <p className="text-green-700 text-sm">{t("successMessage")}</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {submitStatus === "error" && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3">
+                      <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-red-800">{t("errorTitle")}</h4>
+                        <p className="text-red-700 text-sm">{t("errorMessage")}</p>
+                      </div>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold hover:bg-brand-red-hover transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full bg-brand-red text-white py-4 px-8 rounded-lg font-semibold hover:bg-brand-red-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {t("sendMessage")}
+                    {isSubmitting ? t("sending") : t("sendMessage")}
                   </button>
                 </form>
               </div>
