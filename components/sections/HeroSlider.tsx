@@ -100,8 +100,10 @@ export function HeroSlider() {
                   alt={slide.titleKey}
                   fill
                   className="object-cover"
-                  priority={index === 0}
+                  priority={index < 2}
+                  loading={index < 2 ? "eager" : "lazy"}
                   sizes="100vw"
+                  quality={85}
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-navy/30" />

@@ -27,7 +27,7 @@ const collections: Collection[] = [
     id: "landborne",
     titleKey: "landborne",
     descriptionKey: "landborneDesc",
-    image: "/images/products/r200/hero.webp",
+    image: "/images/products/r200/landborne-banner.webp",
     href: "/landborne",
     products: ["R150", "R200", "R100"],
   },
