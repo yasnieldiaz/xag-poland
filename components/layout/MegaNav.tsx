@@ -24,6 +24,11 @@ const productItems = {
   ],
 };
 
+const sparePartsItems = [
+  { name: "P100 Pro", slug: "p100-pro-2023", image: "/images/products/p100-pro/thumbnail.webp" },
+  { name: "P150 Max", slug: "p150-max-2023", image: "/images/products/p150-max/thumbnail.webp" },
+];
+
 export function MegaNav({ isScrolled }: MegaNavProps) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const t = useTranslations("nav");
@@ -57,7 +62,7 @@ export function MegaNav({ isScrolled }: MegaNavProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+              className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[100]"
             >
               <div className="bg-white rounded-xl shadow-xl p-6 min-w-[600px]">
                 <div className="grid grid-cols-2 gap-8">
@@ -155,7 +160,7 @@ export function MegaNav({ isScrolled }: MegaNavProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+              className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[100]"
             >
               <div className="bg-white rounded-xl shadow-xl p-4 min-w-[220px]">
                 <Link href="/download-center" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-navy hover:text-brand-red transition-colors">
@@ -191,7 +196,7 @@ export function MegaNav({ isScrolled }: MegaNavProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+              className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[100]"
             >
               <div className="bg-white rounded-xl shadow-xl p-4 min-w-[200px]">
                 <Link href="/field-operations" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-navy hover:text-brand-red transition-colors">
@@ -200,6 +205,70 @@ export function MegaNav({ isScrolled }: MegaNavProps) {
                 <Link href="/xag-care-express" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-navy hover:text-brand-red transition-colors">
                   {t("xagCareExpress")}
                 </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Spare Parts Dropdown */}
+      <div
+        className="relative"
+        onMouseEnter={() => setActiveMenu("spareParts")}
+        onMouseLeave={() => setActiveMenu(null)}
+      >
+        <button
+          className={cn(
+            "flex items-center gap-1 py-2 font-medium transition-colors",
+            textColor,
+            hoverColor
+          )}
+        >
+          {t("spareParts")}
+          <ChevronIcon className="w-4 h-4" />
+        </button>
+
+        <AnimatePresence>
+          {activeMenu === "spareParts" && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[100]"
+            >
+              <div className="bg-white rounded-xl shadow-xl p-4 min-w-[280px]">
+                <p className="text-sm text-gray-500 mb-3 px-2">{t("sparePartsSub")}</p>
+                <div className="space-y-1">
+                  {sparePartsItems.map((item) => (
+                    <Link
+                      key={item.slug}
+                      href={`/parts-catalog/${item.slug}`}
+                      className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
+                    >
+                      <div className="w-14 h-10 bg-gray-100 rounded-md overflow-hidden">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          width={56}
+                          height={40}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <span className="font-medium text-navy group-hover:text-brand-red transition-colors">
+                        {item.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+                <div className="mt-4 pt-3 border-t border-gray-100">
+                  <Link
+                    href="/parts-catalog"
+                    className="text-brand-red font-medium hover:underline text-sm"
+                  >
+                    {t("viewAllSpareParts")} →
+                  </Link>
+                </div>
               </div>
             </motion.div>
           )}
@@ -230,7 +299,7 @@ export function MegaNav({ isScrolled }: MegaNavProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+              className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[100]"
             >
               <div className="bg-white rounded-xl shadow-xl p-4 min-w-[180px]">
                 <Link href="/about-us" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-navy hover:text-brand-red transition-colors">

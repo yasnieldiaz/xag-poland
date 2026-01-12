@@ -18,6 +18,14 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
+  // Check if we're on a page that needs dark header (non-home pages)
+  const isInternalPage = pathname !== "/" &&
+    pathname !== "/en" &&
+    pathname !== "/pl" &&
+    pathname !== "/es" &&
+    !pathname.endsWith("/") &&
+    pathname.split("/").length > 2;
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -27,11 +35,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Use scrolled style if actually scrolled OR if on internal page
+  const useScrolledStyle = isScrolled || isInternalPage;
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
+        useScrolledStyle
           ? "bg-white/95 backdrop-blur-md shadow-sm py-3"
           : "bg-transparent py-5"
       )}
@@ -51,7 +62,7 @@ export function Header() {
             className="relative z-10 cursor-pointer"
           >
             <Image
-              src={isScrolled ? "/images/logo-xag-imega.svg" : "/images/logo-xag-imega-white.svg"}
+              src={useScrolledStyle ? "/images/logo-xag-imega.svg" : "/images/logo-xag-imega-white.svg"}
               alt="XAG IMEGA"
               width={180}
               height={50}
@@ -63,16 +74,16 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
-            <MegaNav isScrolled={isScrolled} />
-            <LanguageSwitcher isScrolled={isScrolled} />
-            <Button href="/contact-us" variant={isScrolled ? "primary" : "outline-white"}>
+            <MegaNav isScrolled={useScrolledStyle} />
+            <LanguageSwitcher isScrolled={useScrolledStyle} />
+            <Button href="/contact-us" variant={useScrolledStyle ? "primary" : "outline-white"}>
               {t("contactUs")}
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-2">
-            <LanguageSwitcher isScrolled={isScrolled} />
+            <LanguageSwitcher isScrolled={useScrolledStyle} />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="relative z-10 p-2"
@@ -82,21 +93,21 @@ export function Header() {
                 <span
                   className={cn(
                     "block h-0.5 w-full transition-all duration-300",
-                    isScrolled || isMobileMenuOpen ? "bg-navy" : "bg-white",
+                    useScrolledStyle || isMobileMenuOpen ? "bg-navy" : "bg-white",
                     isMobileMenuOpen && "rotate-45 translate-y-2"
                   )}
                 />
                 <span
                   className={cn(
                     "block h-0.5 w-full transition-all duration-300",
-                    isScrolled || isMobileMenuOpen ? "bg-navy" : "bg-white",
+                    useScrolledStyle || isMobileMenuOpen ? "bg-navy" : "bg-white",
                     isMobileMenuOpen && "opacity-0"
                   )}
                 />
                 <span
                   className={cn(
                     "block h-0.5 w-full transition-all duration-300",
-                    isScrolled || isMobileMenuOpen ? "bg-navy" : "bg-white",
+                    useScrolledStyle || isMobileMenuOpen ? "bg-navy" : "bg-white",
                     isMobileMenuOpen && "-rotate-45 -translate-y-2"
                   )}
                 />
