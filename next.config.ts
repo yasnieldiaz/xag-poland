@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
   // Experimental features
   experimental: {
     optimizePackageImports: ["framer-motion", "swiper"],
+    // Inline critical CSS to reduce render-blocking
+    optimizeCss: true,
   },
 
   // Headers for caching
