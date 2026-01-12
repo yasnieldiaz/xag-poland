@@ -452,6 +452,13 @@
       }
     }
   },
+  "partsCatalog": {
+    "home": "Home",
+    "spareParts": "Spare Parts",
+    "heroDescription": "Find the right spare parts for your drone. Browse through our complete catalog of genuine XAG replacement parts and accessories.",
+    "selectCategory": "Select a Category",
+    "selectCategoryDescription": "Choose a component group to view available parts"
+  },
   "footer": {
     "description": "XAG IMEGA provides a wide range of agriculture drones to help optimise agriculture operations and increase crop farming productions.",
     "products": "Products",

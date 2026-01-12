@@ -452,6 +452,13 @@
       }
     }
   },
+  "partsCatalog": {
+    "home": "Strona główna",
+    "spareParts": "Części zamienne",
+    "heroDescription": "Znajdź odpowiednie części zamienne do swojego drona. Przeglądaj nasz kompletny katalog oryginalnych części i akcesoriów XAG.",
+    "selectCategory": "Wybierz kategorię",
+    "selectCategoryDescription": "Wybierz grupę komponentów, aby zobaczyć dostępne części"
+  },
   "footer": {
     "description": "XAG IMEGA oferuje szeroką gamę dronów rolniczych, które pomagają optymalizować operacje rolnicze i zwiększać produkcję upraw.",
     "products": "Produkty",
