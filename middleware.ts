@@ -33,6 +33,9 @@ const countryToLocale: Record<string, string> = {
   'LI': 'de',
   // Czech Republic -> Czech
   'CZ': 'cs',
+  // Netherlands, Belgium (Dutch speaking) -> Dutch
+  'NL': 'nl',
+  'BE': 'nl',
   // Rest of the world -> English (default)
 };
 
@@ -42,7 +45,7 @@ export default function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Check if path already has a locale prefix
-  const hasLocalePrefix = /^\/(pl|es|en|de|cs)(\/|$)/.test(pathname);
+  const hasLocalePrefix = /^\/(pl|es|en|de|cs|nl)(\/|$)/.test(pathname);
 
   // Check if user has a locale cookie (they manually selected a language)
   const localeCookie = request.cookies.get('NEXT_LOCALE')?.value;
