@@ -33,6 +33,20 @@ const localeFlags: Record<Locale, React.ReactNode> = {
       <path fill="#dc143c" d="M0 240h640v240H0z" />
     </svg>
   ),
+  de: (
+    <svg className="w-5 h-5 rounded-sm" viewBox="0 0 640 480">
+      <path fill="#000" d="M0 0h640v160H0z" />
+      <path fill="#D00" d="M0 160h640v160H0z" />
+      <path fill="#FFCE00" d="M0 320h640v160H0z" />
+    </svg>
+  ),
+  cs: (
+    <svg className="w-5 h-5 rounded-sm" viewBox="0 0 640 480">
+      <path fill="#fff" d="M0 0h640v240H0z" />
+      <path fill="#d7141a" d="M0 240h640v240H0z" />
+      <path fill="#11457e" d="M0 0l320 240L0 480z" />
+    </svg>
+  ),
 };
 
 export function LanguageSwitcher({ isScrolled = false }: LanguageSwitcherProps) {
