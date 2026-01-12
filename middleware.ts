@@ -39,19 +39,61 @@ const countryToLocale: Record<string, string> = {
   // Rest of the world -> English (default)
 };
 
+// Search engine crawlers - don't redirect them, let them see canonical content
+const crawlerPatterns = [
+  'googlebot',
+  'bingbot',
+  'yandex',
+  'duckduckbot',
+  'slurp',
+  'baiduspider',
+  'facebookexternalhit',
+  'twitterbot',
+  'linkedinbot',
+  'embedly',
+  'quora link preview',
+  'showyoubot',
+  'outbrain',
+  'pinterest',
+  'applebot',
+  'semrushbot',
+  'ahrefsbot',
+];
+
+function isCrawler(userAgent: string): boolean {
+  const ua = userAgent.toLowerCase();
+  return crawlerPatterns.some(pattern => ua.includes(pattern));
+}
+
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
+  const { pathname, host } = request.nextUrl;
 
-  // Check if path already has a locale prefix
+  // 1. Redirect www to non-www (canonical URL)
+  if (host.startsWith('www.')) {
+    const url = request.nextUrl.clone();
+    url.host = host.replace('www.', '');
+    return NextResponse.redirect(url, 301);
+  }
+
+  // 2. Check if path already has a locale prefix
   const hasLocalePrefix = /^\/(pl|es|en|de|cs|nl)(\/|$)/.test(pathname);
 
-  // Check if user has a locale cookie (they manually selected a language)
+  // 3. Check if user has a locale cookie (they manually selected a language)
   const localeCookie = request.cookies.get('NEXT_LOCALE')?.value;
 
-  // If no locale in URL and no manual selection, detect by country
+  // 4. Get user agent to detect crawlers
+  const userAgent = request.headers.get('user-agent') || '';
+
+  // 5. If no locale in URL and no manual selection, detect by country
+  // BUT: Don't redirect search engine crawlers - let them see canonical content
   if (!hasLocalePrefix && !localeCookie && pathname === '/') {
+    // Skip geo-redirect for search engine crawlers
+    if (isCrawler(userAgent)) {
+      return intlMiddleware(request);
+    }
+
     // Get country from Cloudflare header (CF-IPCountry)
     const country = request.headers.get('cf-ipcountry') ||
                    request.headers.get('x-vercel-ip-country') ||
@@ -59,11 +101,11 @@ export default function middleware(request: NextRequest) {
 
     const detectedLocale = countryToLocale[country] || 'en';
 
-    // Redirect to detected locale
+    // Redirect to detected locale (use 302 for geo-redirects, not 301)
     if (detectedLocale !== 'es') { // 'es' is default, no redirect needed
       const url = request.nextUrl.clone();
       url.pathname = `/${detectedLocale}`;
-      return NextResponse.redirect(url);
+      return NextResponse.redirect(url, 302);
     }
   }
 

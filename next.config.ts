@@ -60,6 +60,26 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Font files caching
+        source: "/:path*.woff2",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Static JS/CSS caching
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
 };

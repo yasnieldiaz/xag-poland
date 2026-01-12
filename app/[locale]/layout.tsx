@@ -14,18 +14,24 @@ const exo = Exo({
   variable: "--font-exo",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
+  preload: true,
 });
 
 const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
+  preload: true,
 });
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600"],
+  preload: false,
 });
 
 const siteUrl = "https://droneagri.pl";
@@ -211,6 +217,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={localeToLang[locale as Locale]} className={`${exo.variable} ${lexend.variable} ${inter.variable}`}>
+      <head>
+        {/* Preconnect to external domains for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* DNS prefetch for CDN resources */}
+        <link rel="dns-prefetch" href="https://cdn.prod.website-files.com" />
+      </head>
       <body className="antialiased min-h-screen flex flex-col">
         <StructuredData />
         <NextIntlClientProvider messages={messages}>
