@@ -14,9 +14,12 @@ Disallow: /_next/
 Disallow: /static/
 
 # Allow all language versions
-Allow: /pl/
-Allow: /en/
 Allow: /es/
+Allow: /en/
+Allow: /pl/
+Allow: /de/
+Allow: /cs/
+Allow: /nl/
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
