@@ -186,15 +186,110 @@ const getPartsData = (productSlug: string, groupSlug: string): PartsGroupData | 
       },
       "fuselage": {
         title: "003-P100H Pro 2023 Fuselage",
-        diagrams: [{
-          id: "fuselage-1",
-          title: "Fuselage",
-          image: "/images/parts/groups/p100-fuselage-hq.png",
-          hideMarkers: true,
-          parts: [
-            { id: "1", number: "1", code: "PENDING", name: "Pending - needs diagram image and parts data", quantity: 1, position: { x: 50, y: 50 } },
-          ],
-        }],
+        diagrams: [
+          {
+            id: "fuselage-frame",
+            title: "Frame",
+            image: "/images/parts/p100-fuselage-sub1.jpg",
+            hideMarkers: true,
+            parts: [
+              { id: "1", number: "1", code: "14-005-00021", name: "Main Fuselage", quantity: 2, position: { x: 50, y: 30 } },
+              { id: "2", number: "2", code: "02-001-08932", name: "Central Cable & Tube Organizer", quantity: 1, position: { x: 45, y: 35 },
+                subParts: [{ id: "2.1", number: "2.1", code: "02-004-00624", name: "M3*10*6 Screw Kit", quantity: 2 }]
+              },
+              { id: "3", number: "3", code: "02-001-07711", name: "Arm Clamp Dustproof Cover", quantity: 8, position: { x: 55, y: 25 } },
+              { id: "4", number: "4", code: "02-002-09897", name: "Main Fuselage Beam", quantity: 2, position: { x: 30, y: 50 },
+                subParts: [{ id: "4.1", number: "4.1", code: "02-004-00939", name: "M5*16*10 Screw Kit", quantity: 10 }]
+              },
+              { id: "5", number: "5", code: "02-001-08156", name: "Central Hood", quantity: 1, position: { x: 70, y: 20 },
+                subParts: [{ id: "5.1", number: "5.1", code: "02-004-00918", name: "ST4.2*8 Tapping Screw", quantity: 4 }]
+              },
+              { id: "6", number: "6", code: "02-001-07657", name: "Fuselage Side Panel", quantity: 4, position: { x: 25, y: 40 },
+                subParts: [
+                  { id: "6.1", number: "6.1", code: "02-004-00903", name: "ST2.9*8 Tapping Screw", quantity: 2 },
+                  { id: "6.2", number: "6.2", code: "02-004-00618", name: "M4*8*8 Screw Kit", quantity: 2 }
+                ]
+              },
+              { id: "7", number: "7", code: "02-001-09446", name: "Fuselage Handle 4G Antenna Bracket", quantity: 2, position: { x: 35, y: 22 } },
+              { id: "8", number: "8", code: "02-001-08829", name: "Fuselage Handle", quantity: 2, position: { x: 28, y: 18 },
+                subParts: [{ id: "8.1", number: "8.1", code: "02-004-01053", name: "M6*22*12 Screw Kit", quantity: 2 }]
+              },
+              { id: "9", number: "9", code: "14-005-00026", name: "Application System Releasable Hook", quantity: 2, position: { x: 20, y: 35 } },
+              { id: "10", number: "10", code: "02-002-09829", name: "Application System Releasable Hook Pin", quantity: 2, position: { x: 40, y: 28 } },
+              { id: "11", number: "11", code: "14-005-00022", name: "Application System Releasable Hook Bracket", quantity: 2, position: { x: 42, y: 32 },
+                subParts: [{ id: "11.1", number: "11.1", code: "02-004-00939", name: "M5*16*10 Screw Kit", quantity: 4 }]
+              },
+              { id: "12", number: "12", code: "02-007-00200", name: "Main Fuselage Interior Foam Protector", quantity: 4, position: { x: 15, y: 45 } },
+              { id: "13", number: "13", code: "02-001-08979", name: "Antenna Mount Cap", quantity: 2, position: { x: 18, y: 38 } },
+              { id: "14", number: "14", code: "02-001-07658", name: "RTK & Radio Antenna Bracket", quantity: 2, position: { x: 22, y: 55 },
+                subParts: [{ id: "14.1", number: "14.1", code: "02-004-00903", name: "ST2.9*8 Tapping Screw", quantity: 2 }]
+              },
+              { id: "15", number: "15", code: "02-001-07990", name: "Application System Mount", quantity: 4, position: { x: 32, y: 58 },
+                subParts: [{ id: "15.1", number: "15.1", code: "02-004-00834", name: "Hexagonal Cylinder Head Triple Combination Self-locking Screw", quantity: 4 }]
+              },
+              { id: "16", number: "16", code: "02-001-08831", name: "Fuselage Handle 4G Antenna Bracket Cable Clip", quantity: 4, position: { x: 38, y: 62 },
+                subParts: [{ id: "16.1", number: "16.1", code: "02-004-00531", name: "M2.5*6*4.5 Screw Kit", quantity: 2 }]
+              },
+              { id: "17", number: "17", code: "02-001-07622", name: "Application System Mount Rubber Buffer", quantity: 4, position: { x: 48, y: 42 } },
+              { id: "18", number: "18", code: "02-001-08784", name: "Central Power Busbar O-ring", quantity: 1, position: { x: 52, y: 48 } },
+              { id: "19", number: "19", code: "02-001-08238", name: "Central Power Busbar Screw Dust Proof Cover", quantity: 2, position: { x: 35, y: 52 } },
+              { id: "20", number: "20", code: "02-001-08976", name: "V-Type Tube Fitting", quantity: 2, position: { x: 55, y: 55 },
+                subParts: [{ id: "20.1", number: "20.1", code: "02-004-00903", name: "ST2.9*8 Tapping Screw", quantity: 1 }]
+              },
+              { id: "21", number: "21", code: "02-001-08483", name: "Fuselage Bottom Shield", quantity: 1, position: { x: 60, y: 45 },
+                subParts: [{ id: "21.1", number: "21.1", code: "02-004-00903", name: "ST2.9*8 Tapping Screw", quantity: 4 }]
+              },
+            ],
+          },
+          {
+            id: "fuselage-power",
+            title: "Power Distribution",
+            image: "/images/parts/p100-fuselage-sub2.jpg",
+            hideMarkers: true,
+            parts: [
+              { id: "1", number: "1", code: "02-002-09974", name: "Main Power Cord Connector Isolator", quantity: 12, position: { x: 45, y: 20 } },
+              { id: "2", number: "2", code: "14-006-00024", name: "Central Cable Hub", quantity: 1, position: { x: 50, y: 30 } },
+              { id: "3", number: "3", code: "02-001-08213", name: "Central Power Busbar", quantity: 1, position: { x: 40, y: 35 },
+                subParts: [{ id: "3.1", number: "3.1", code: "02-004-00833", name: "M4*10*8 Screw Kit", quantity: 4 }]
+              },
+              { id: "4", number: "4", code: "14-005-00027", name: "Battery Socket", quantity: 2, position: { x: 70, y: 25 },
+                subParts: [{ id: "4.1", number: "4.1", code: "02-004-00836", name: "M4*16*8 Screw Kit", quantity: 2 }]
+              },
+              { id: "5", number: "5", code: "01-027-02536", name: "Y-Type Signal Cable (for Battery Sockets)", quantity: 1, position: { x: 75, y: 30 } },
+            ],
+          },
+          {
+            id: "fuselage-cables",
+            title: "Cables",
+            image: "/images/parts/p100-fuselage-sub3.jpg",
+            hideMarkers: true,
+            parts: [
+              { id: "1", number: "1", code: "14-006-00024", name: "Central Cable Hub", quantity: 1, position: { x: 50, y: 15 } },
+              { id: "2", number: "2", code: "02-001-08213", name: "Central Power Busbar", quantity: 1, position: { x: 50, y: 25 },
+                subParts: [{ id: "2.1", number: "2.1", code: "02-004-00833", name: "M4*10*8 Screw Kit", quantity: 4 }]
+              },
+              { id: "3", number: "3", code: "14-006-00016", name: "Short Liquid Tube (Spraying System - Fuselage)", quantity: 2, position: { x: 70, y: 55 } },
+              { id: "4", number: "4", code: "01-027-02338", name: "Application System Main Connect Cable", quantity: 1, position: { x: 70, y: 65 } },
+            ],
+          },
+          {
+            id: "fuselage-antennas",
+            title: "Antennas",
+            image: "/images/parts/p100-fuselage-sub4.jpg",
+            hideMarkers: true,
+            parts: [
+              { id: "1", number: "1", code: "01-003-00379", name: "RTK Antenna (Right)", quantity: 1, position: { x: 22, y: 25 },
+                subParts: [{ id: "1.1", number: "1.1", code: "02-004-00903", name: "ST2.9*8 Tapping Screw", quantity: 4 }]
+              },
+              { id: "2", number: "2", code: "01-003-00374", name: "4G Antenna", quantity: 4, position: { x: 32, y: 25 } },
+              { id: "3", number: "3", code: "01-003-00373", name: "Radio Antenna (Dual Band)", quantity: 1, position: { x: 45, y: 25 } },
+              { id: "4", number: "4", code: "01-003-00373", name: "Radio Antenna (Dual Band)", quantity: 1, position: { x: 58, y: 25 } },
+              { id: "5", number: "5", code: "01-003-00378", name: "RTK Antenna (Left)", quantity: 1, position: { x: 72, y: 25 },
+                subParts: [{ id: "5.1", number: "5.1", code: "02-004-00903", name: "ST2.9*8 Tapping Screw", quantity: 4 }]
+              },
+            ],
+          },
+        ],
       },
       "tail-frame": {
         title: "004-P100H Pro 2023 Tail Frame",
