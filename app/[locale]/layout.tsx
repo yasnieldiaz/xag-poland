@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { StructuredData } from "@/components/seo";
+import { GoogleAnalytics } from "@/components/analytics";
 import "../globals.css";
 
 const exo = Exo({
@@ -223,8 +224,11 @@ export default async function LocaleLayout({ children, params }: Props) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* DNS prefetch for CDN resources */}
         <link rel="dns-prefetch" href="https://cdn.prod.website-files.com" />
+        {/* Preload critical hero image for LCP optimization */}
+        <link rel="preload" as="image" href="/images/logo-xag-imega-white.svg" />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
+        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
         <StructuredData />
         <NextIntlClientProvider messages={messages}>
           <Header />
