@@ -42,6 +42,13 @@ const menuItems: MenuItem[] = [
     ],
   },
   {
+    titleKey: "spareParts",
+    items: [
+      { nameKey: "p100Pro", href: "/parts-catalog/p100-pro-2023" },
+      { nameKey: "p150Max", href: "/parts-catalog/p150-max-2023" },
+    ],
+  },
+  {
     titleKey: "company",
     items: [
       { nameKey: "aboutUs", href: "/about-us" },
