@@ -295,11 +295,72 @@ const getPartsData = (productSlug: string, groupSlug: string): PartsGroupData | 
         title: "004-P100H Pro 2023 Tail Frame",
         diagrams: [{
           id: "tail-1",
-          title: "Tail Frame",
-          image: "/images/parts/groups/placeholder.svg",
+          title: "Tail Frame Assembly",
+          image: "/images/parts/p100-tail-frame-diagram.jpg",
           parts: [
-            { id: "1", number: "1", code: "05-001-00300", name: "Tail Frame Assembly", quantity: 1, position: { x: 50, y: 40 } },
-            { id: "2", number: "2", code: "05-001-00301", name: "Rear LED Light Bar", quantity: 1, position: { x: 50, y: 20 } },
+            {
+              id: "1",
+              number: "1",
+              code: "02-001-09024",
+              name: "Tail Frame",
+              quantity: 1,
+              position: { x: 50, y: 25 },
+              subParts: [
+                { id: "1.1", number: "1.1", code: "02-004-00939", name: "M5*16*10 Screw Kit", quantity: 8 }
+              ]
+            },
+            {
+              id: "2",
+              number: "2",
+              code: "02-001-08078",
+              name: "Battery Guide Rubber Buffer",
+              quantity: 2,
+              position: { x: 25, y: 40 }
+            },
+            {
+              id: "3",
+              number: "3",
+              code: "02-002-09098",
+              name: "Tail Frame Beam",
+              quantity: 1,
+              position: { x: 50, y: 55 },
+              subParts: [
+                { id: "3.1", number: "3.1", code: "02-004-00624", name: "M3*10*6 Screw Kit", quantity: 8 }
+              ]
+            },
+            {
+              id: "4",
+              number: "4",
+              code: "14-005-00006",
+              name: "Battery Guide Kit (incl Rubber Buffers)",
+              quantity: 2,
+              position: { x: 75, y: 40 },
+              subParts: [
+                { id: "4.1", number: "4.1", code: "02-004-00994", name: "M4*12 Countersunk Screw", quantity: 2 }
+              ]
+            },
+            {
+              id: "5",
+              number: "5",
+              code: "02-001-08009",
+              name: "Battery Socket Upper Housing",
+              quantity: 2,
+              position: { x: 30, y: 70 },
+              subParts: [
+                { id: "5.1", number: "5.1", code: "02-004-00624", name: "M3*10*6 Screw Kit", quantity: 4 }
+              ]
+            },
+            {
+              id: "6",
+              number: "6",
+              code: "02-001-08462",
+              name: "Battery Socket Lower Housing",
+              quantity: 2,
+              position: { x: 70, y: 70 },
+              subParts: [
+                { id: "6.1", number: "6.1", code: "02-004-00624", name: "M3*10*6 Screw Kit", quantity: 4 }
+              ]
+            },
           ],
         }],
       },
