@@ -17,10 +17,38 @@ export default function RequestWarrantyServicePage() {
     issueDescription: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Warranty claim submitted:", formData);
-    alert(t("successMessage"));
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          subject: `Solicitud de Garantía - ${formData.productModel}`,
+          message: `Modelo: ${formData.productModel}\nNúmero de Serie: ${formData.serialNumber}\nFecha de Compra: ${formData.purchaseDate}\nLugar de Compra: ${formData.purchaseLocation}\n\nDescripción del Problema:\n${formData.issueDescription}`,
+        }),
+      });
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", phone: "", company: "", productModel: "", serialNumber: "", purchaseDate: "", purchaseLocation: "", issueDescription: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (

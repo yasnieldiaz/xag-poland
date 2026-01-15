@@ -13,6 +13,21 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
+# Block legacy WordPress paths (site migrated from WordPress)
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-json/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /wp-cron.php
+Disallow: /wp-*.php
+Disallow: /feed/
+Disallow: /trackback/
+Disallow: /comments/
+Disallow: /?s=
+Disallow: /*?replytocom=
+
 # Allow all language versions
 Allow: /es/
 Allow: /en/

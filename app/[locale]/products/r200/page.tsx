@@ -298,7 +298,7 @@ function ChassisSection() {
           <ClipReveal className="relative">
             <div className="aspect-video rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/products/r200/gallery-1.jpg"
+                src="/images/products/r200/gallery-1.webp"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -331,7 +331,7 @@ function RevoSpraySection() {
           <ClipReveal className="relative order-2 lg:order-1">
             <div className="aspect-video rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/products/r200/gallery-5.png"
+                src="/images/products/r200/gallery-5.webp"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -405,7 +405,7 @@ function ControlSystemSection() {
           <ClipReveal className="relative">
             <div className="aspect-video rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/products/r200/gallery-6.png"
+                src="/images/products/r200/gallery-6.webp"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -548,7 +548,7 @@ function SafetySection() {
           <ClipReveal className="relative">
             <div className="aspect-video rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/products/r200/gallery-2.jpg"
+                src="/images/products/r200/gallery-2.webp"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -607,7 +607,7 @@ function PowerSystemSection() {
           <ClipReveal className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-navy-light">
               <Image
-                src="/images/products/r200/gallery-3.jpg"
+                src="/images/products/r200/gallery-3.webp"
                 alt={t("title")}
                 fill
                 className="object-cover"
@@ -678,9 +678,31 @@ function ContactSection() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, subject: "R200 - Consulta de producto" }),
+      });
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
