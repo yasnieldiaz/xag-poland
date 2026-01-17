@@ -289,6 +289,20 @@ export function MegaNav({ isScrolled }: MegaNavProps) {
         {t("academy")}
       </a>
 
+      {/* Sombreado Link */}
+      <a
+        href="https://cieniowanie.droneagri.pl"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          "flex items-center gap-1 py-2 font-medium transition-colors",
+          textColor,
+          hoverColor
+        )}
+      >
+        {t("shading")}
+      </a>
+
       {/* Company Dropdown */}
       <div
         className="relative"
