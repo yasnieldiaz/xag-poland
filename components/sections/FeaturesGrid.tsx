@@ -61,7 +61,7 @@ export function FeaturesGrid() {
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Experience the benefits of next-generation agricultural technology
-              designed for Australian conditions.
+              designed for European conditions.
             </p>
           </div>
         </ScrollReveal>

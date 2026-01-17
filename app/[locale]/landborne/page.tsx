@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getProductsByCategory } from "@/content/products";
 
 export const metadata: Metadata = {
-  title: "Landborne Robots | XAG Australia",
+  title: "Landborne Robots | XAG Poland",
   description:
     "Discover XAG's autonomous ground robots for precision agriculture. Ground sprayers, mowers, and multi-purpose farm robots.",
 };

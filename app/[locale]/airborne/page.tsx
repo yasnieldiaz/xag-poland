@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getProductsByCategory } from "@/content/products";
 
 export const metadata: Metadata = {
-  title: "Airborne Drones | XAG Australia",
+  title: "Airborne Drones | XAG Poland",
   description:
     "Explore XAG's range of agricultural drones for precision crop spraying, seeding, and mapping. Industry-leading performance and reliability.",
 };

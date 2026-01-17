@@ -275,6 +275,20 @@ export function MegaNav({ isScrolled }: MegaNavProps) {
         </AnimatePresence>
       </div>
 
+      {/* Academy Link */}
+      <a
+        href="https://academy.droneagri.pl"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          "flex items-center gap-1 py-2 font-medium transition-colors",
+          textColor,
+          hoverColor
+        )}
+      >
+        {t("academy")}
+      </a>
+
       {/* Company Dropdown */}
       <div
         className="relative"

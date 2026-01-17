@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.name} | XAG Australia`,
+    title: `${product.name} | XAG Poland`,
     description: product.description,
     openGraph: {
       title: product.name,
